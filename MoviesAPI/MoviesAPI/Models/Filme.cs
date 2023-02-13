@@ -4,6 +4,8 @@ namespace MoviesAPI.Models
 {
     public class Filme
     {
+        [Key]
+        [Required]
         public int ID { get; set; }
         [Required(ErrorMessage = "O Título do filme não foi informado.")]   
         public string Title { get; set; }
