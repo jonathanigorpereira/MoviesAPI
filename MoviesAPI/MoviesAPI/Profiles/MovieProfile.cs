@@ -10,6 +10,7 @@ namespace MoviesAPI.Profiles
         {
             //Create Automap dto
             CreateMap<CreateMovieDTO, Filme>();
+            CreateMap<Filme, CreateMovieDTO>();
         }
     }
 }
