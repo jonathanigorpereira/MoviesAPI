@@ -24,5 +24,53 @@
         <member name="M:MoviesAPI.Migrations.CreateMovieTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:MoviesAPI.Migrations.Novocinema">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Novocinema.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Novocinema.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Novocinema.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MoviesAPI.Migrations.Sessões">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Sessões.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Sessões.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Sessões.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MoviesAPI.Migrations.CriandoarelaçãoentreSessãoeCinema">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.CriandoarelaçãoentreSessãoeCinema.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.CriandoarelaçãoentreSessãoeCinema.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.CriandoarelaçãoentreSessãoeCinema.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MoviesAPI.Migrations.Ajustes">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Ajustes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Ajustes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.Ajustes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

@@ -10,5 +10,8 @@ namespace MoviesAPI.Data
 
         }
         public DbSet<Filme> Movies { get; set; }
+        public DbSet<MovieTeather> MovieTheater { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Session> Sessions { get; set; }
     }
 }

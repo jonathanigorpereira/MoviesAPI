@@ -10,7 +10,9 @@ namespace MoviesAPI.Profiles
         {
             //Create Automap dto
             CreateMap<CreateMovieDTO, Filme>();
-            CreateMap<Filme, CreateMovieDTO>();
+            CreateMap<Filme, CreateMovieDTO>()
+                 .ForMember(movieDto => movieDto.Sessions,
+                           opt => opt.MapFrom(movie => movie.Sessions));
         }
     }
 }

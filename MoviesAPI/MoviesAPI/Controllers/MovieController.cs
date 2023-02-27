@@ -49,7 +49,7 @@ namespace MoviesAPI.Controllers
         [HttpGet]
         public IEnumerable<Filme> Get([FromQuery] int skip = 0, [FromQuery] int take = 50)
         {
-            return _context.Movies.Skip(skip).Take(take);
+            return _context.Movies.Skip(skip).Take(take).ToList();
         }
 
         [HttpGet("{id}")]

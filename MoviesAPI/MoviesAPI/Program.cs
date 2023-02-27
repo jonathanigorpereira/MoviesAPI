@@ -22,7 +22,7 @@ builder.Services.AddSwaggerGen(c=>
 var connectionString = builder.Configuration.GetConnectionString("MovieConnection");
 
 builder.Services.AddDbContext<MovieContext>(opt =>
-    opt.UseSqlServer(connectionString)
+    opt.UseLazyLoadingProxies().UseSqlServer(connectionString)
     );
 
 

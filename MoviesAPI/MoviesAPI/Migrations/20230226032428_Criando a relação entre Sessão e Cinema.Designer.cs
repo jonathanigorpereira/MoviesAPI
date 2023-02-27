@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MoviesAPI.Data;
 
@@ -11,9 +12,11 @@ using MoviesAPI.Data;
 namespace MoviesAPI.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    partial class MovieContextModelSnapshot : ModelSnapshot
+    [Migration("20230226032428_Criando a relação entre Sessão e Cinema")]
+    partial class CriandoarelaçãoentreSessãoeCinema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,7 +104,7 @@ namespace MoviesAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("MovieId")
+                    b.Property<int>("MovieId")
                         .HasColumnType("int");
 
                     b.Property<int?>("MovieTeatherId")
@@ -131,15 +134,17 @@ namespace MoviesAPI.Migrations
                 {
                     b.HasOne("MoviesAPI.Models.Filme", "Movie")
                         .WithMany("Sessions")
-                        .HasForeignKey("MovieId");
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("MoviesAPI.Models.MovieTeather", "MovieTeather")
+                    b.HasOne("MoviesAPI.Models.MovieTeather", "MovieTheater")
                         .WithMany("Sessions")
                         .HasForeignKey("MovieTeatherId");
 
                     b.Navigation("Movie");
 
-                    b.Navigation("MovieTeather");
+                    b.Navigation("MovieTheater");
                 });
 
             modelBuilder.Entity("MoviesAPI.Models.Address", b =>
