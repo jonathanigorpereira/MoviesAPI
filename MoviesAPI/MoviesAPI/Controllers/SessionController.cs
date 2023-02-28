@@ -26,7 +26,7 @@ namespace MoviesAPI.Controllers
             Session session = _mapper.Map<Session>(sessionDTO);
             _context.Sessions.Add(session);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(GetSessions), new { Id = session.Id }, session);
+            return CreatedAtAction(nameof(GetSessions), new { movieId = session.MovieId, movieTeatherId = session.MovieTeatherId}, session);
         }
 
         [HttpGet]
@@ -35,10 +35,10 @@ namespace MoviesAPI.Controllers
             return _mapper.Map<List<ReadSessionDTO>>(_context.Sessions.ToList());
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetSessionById(int id)
+        [HttpGet("{MovieId}/{MovieTheaterId}")]
+        public IActionResult GetSessionById(int movieId, int movieTheaterId)
         {
-            Session session = _context.Sessions.FirstOrDefault(x => x.Id == id);
+            Session session = _context.Sessions.FirstOrDefault(x => x.MovieId == movieId && x.MovieTeatherId ==movieTheaterId);
             if (session == null) { return NotFound(); }
 
             ReadSessionDTO readSession = _mapper.Map<ReadSessionDTO>(session);
@@ -46,10 +46,10 @@ namespace MoviesAPI.Controllers
             return Ok(readSession);
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteSession(int id)
+        [HttpDelete("{movieId}/{movieTeatherId}")]
+        public IActionResult DeleteSession(int movieId, int movieTeatherId)
         {
-            Session session = _context.Sessions.FirstOrDefault(x => x.Id == id);
+            Session session = _context.Sessions.FirstOrDefault(x => x.MovieId == movieId && x.MovieTeatherId == movieTeatherId);
             if (session == null) { return NotFound(); }
 
             _context.Sessions.Remove(session);

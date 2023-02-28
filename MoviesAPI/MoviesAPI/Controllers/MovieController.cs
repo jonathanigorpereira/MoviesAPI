@@ -47,21 +47,30 @@ namespace MoviesAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Filme> Get([FromQuery] int skip = 0, [FromQuery] int take = 50)
+        public IEnumerable<ReadMovieDTO> Get([FromQuery] int skip = 0, [FromQuery] int take = 50, [FromQuery] string? movieName=null)
         {
-            return _context.Movies.Skip(skip).Take(take).ToList();
+            if (movieName==null)
+            {
+                return _mapper.Map<List<ReadMovieDTO>>(_context.Movies.Skip(skip).Take(take).ToList());
+            }
+            return _mapper.Map<List<ReadMovieDTO>>(_context.Movies.Skip(skip).Take(take)
+                                                                            .Where(movie=>movie.Sessions
+                                                                                               .Any(sessions=>sessions.Movie.Title ==movieName
+                                                                             )).ToList());
         }
 
         [HttpGet("{id}")]
         public IActionResult GetMovieByID(int id)
         {
-            var movieByid = _context.Movies.FirstOrDefault(x => x.ID == id);
+            var movieByid = _context.Movies
+            .FirstOrDefault(movie => movie.ID == id);
             if (movieByid == null) return NotFound();
-            return Ok(movieByid);
+            var moviesDto = _mapper.Map<ReadMovieDTO>(movieByid);
+            return Ok(moviesDto);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateMovie(int id, [FromBody] CreateMovieDTO movie)
+        public IActionResult UpdateMovie(int id, [FromBody] UpdateMovieDTO movie)
         {
             var movies = _context.Movies.FirstOrDefault(x => x.ID == id);
             if (movies == null) return NotFound();
@@ -85,12 +94,12 @@ namespace MoviesAPI.Controllers
          ]
          */
         [HttpPatch("{id}")]
-        public IActionResult UpdateMoviePatch(int id, JsonPatchDocument<CreateMovieDTO> patch) {
+        public IActionResult UpdateMoviePatch(int id, JsonPatchDocument<UpdateMovieDTO> patch) {
 
             var movies = _context.Movies.FirstOrDefault(x => x.ID == id);
             if (movies == null) return NotFound();
 
-            var movieUpdatePatch = _mapper.Map<CreateMovieDTO>(movies);
+            var movieUpdatePatch = _mapper.Map<UpdateMovieDTO>(movies);
             patch.ApplyTo(movieUpdatePatch, ModelState);
 
             if (!TryValidateModel(movieUpdatePatch))

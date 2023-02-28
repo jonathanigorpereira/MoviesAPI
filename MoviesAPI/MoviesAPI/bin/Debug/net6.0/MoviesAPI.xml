@@ -72,5 +72,41 @@
         <member name="M:MoviesAPI.Migrations.Ajustes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:MoviesAPI.Migrations.alteraçõesnasessão">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.alteraçõesnasessão.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.alteraçõesnasessão.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.alteraçõesnasessão.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MoviesAPI.Migrations.novobanco">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.novobanco.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.novobanco.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.novobanco.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MoviesAPI.Migrations.metodosdebusca">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.metodosdebusca.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.metodosdebusca.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MoviesAPI.Migrations.metodosdebusca.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>
